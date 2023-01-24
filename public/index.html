@@ -17,7 +17,7 @@
     $(function () {
       $("#resizable").resizable({
         containment: "#container"
-      });
+      }).draggable({ containment: "parent" , axis: "y" });
 
       $("#sortable").sortable({
         revert: true
