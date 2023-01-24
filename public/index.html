@@ -1,64 +1,61 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>jQuery UI Resizable - Constrain resize area</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="/main.css">
   <style>
-  #container { width: 300px; height: 300px; }
-  #container h3 { text-align: center; margin: 0; margin-bottom: 10px; }
-  #resizable { background-position: top left; width: 150px; height: 150px; }
-  #resizable, #container { padding: 0.5em; }
-  
-  #draggable1 { background:#ff0000; width: 150px; height: 35px;}
-#draggable2 { background:#00ff00; width: 150px; height: 35px;}
-#draggable3 { background:#0000ff; width: 150px; height: 35px;}
 
-#sortable { width: 700px; height: 35px;  }
 
-#sortable > div { float: left; }
-p { padding: 0.5em; }
-  
   </style>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <script>
-  $( function() {
-    $( "#resizable" ).resizable({
-      containment: "#container"
+    $(function () {
+      $("#resizable").resizable({
+        containment: "#container"
+      });
+
+      $("#sortable").sortable({
+        revert: true
+      });
+
     });
-	
-	$("#sortable").sortable({
-            revert: true
-    }); 
-	
-  } );
   </script>
 </head>
+
 <body>
- 
- <div class="demo">
+
+  <div class="demo">
     <div id="sortable" class="ui-state-default">
-        <div id = "draggable1" class="ui-state-default"><p>Home</p></div>
-        <div id = "draggable2" class="ui-state-default"><p>Contact Us</p></div>
-        <div id = "draggable3" class="ui-state-default"><p>
-		
-		<div id="container" class="ui-widget-content">
+      <div id="draggable1" class="ui-state-default">
+        <p>Home</p>
+      </div>
+      <div id="draggable2" class="ui-state-default">
+        <p>Contact Us</p>
+      </div>
+      <div id="draggable3" class="ui-state-default">
+        <p>
 
-  <div id="resizable" class="ui-state-active">
-    <h3 class="ui-widget-header">Resizable</h3>
-  </div>
-</div>
-		
-		
-		</p></div>
+        <div id="container" class="ui-widget-content">
+
+          <div id="resizable" class="ui-state-active">
+            <h3 class="ui-widget-header">Resizable</h3>
+          </div>
+        </div>
+
+
+        </p>
+      </div>
     </div>
-</div>
- 
+  </div>
 
- 
- 
+
+
+
 </body>
+
 </html>
