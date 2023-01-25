@@ -15,10 +15,16 @@
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <script>
     $(function () {
+      $("#bar").draggable({ containment: "parent", axis: "y" });
       $("#resizable").resizable({
-        containment: "#container"
-      }).draggable({ containment: "parent" , axis: "y" });
-
+        containment: "#container" , minWidth: 300
+      })
+      $("#also").resizable({
+        containment: "#container" , minWidth: 300
+      });
+      $("#also2").resizable({
+        containment: "#container" , minWidth: 300
+      });
       $("#sortable").sortable({
         revert: true
       });
@@ -32,19 +38,28 @@
   <div class="demo">
     <div id="sortable" class="ui-state-default">
       <div id="draggable1" class="ui-state-default">
-        <p>Home</p>
+        &nbsp;
       </div>
       <div id="draggable2" class="ui-state-default">
-        <p>Contact Us</p>
+        &nbsp;
       </div>
       <div id="draggable3" class="ui-state-default">
         <p>
 
         <div id="container" class="ui-widget-content">
-          <div id="resizable" class="ui-state-active">
-            &nbsp;
+          <div id="bar">
 
+            <div id="resizable" class="ui-widget-content">
+              &nbsp;
+            </div>
+            <div id="also" class="ui-widget-content">
+              &nbsp;
+            </div>
+            <div id="also2" class="ui-widget-content">
+              &nbsp;
+            </div>
           </div>
+
         </div>
 
 
